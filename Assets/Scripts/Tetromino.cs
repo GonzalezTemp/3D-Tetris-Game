@@ -102,7 +102,11 @@ public class Tetromino : MonoBehaviour
             }
             else
             {
-                transform.position += new Vector3(0, 1, 0);
+                
+		transform.position += new Vector3(0, 1, 0);
+		//Part 6 changes
+		enabled = false;
+		FindObjectOfType<Game>().SpawnNextTetromino();
             }
 
             fall = Time.time;
